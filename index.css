@@ -1,0 +1,32 @@
+.titulo-maquina-escribir {
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada, típica de máquinas de escribir */
+    overflow: hidden; /* Oculta el texto que aún no se ha escrito */
+    border-right: .15em solid orange; /* Simula el cursor parpadeante */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    margin: 0 auto; /* Centra el título */
+    letter-spacing: .15em; /* Espacio entre letras */
+    animation:
+        typing 3.5s steps(30, end), /* Duración y pasos de la animación */
+        blink-caret .75s step-end infinite; /* Animación del cursor */
+    width: 0; /* Inicialmente, el ancho es 0, el texto se irá revelando */
+}
+
+/* Keyframes para la animación de escritura */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Keyframes para la animación del cursor parpadeante */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange } /* Color del cursor al parpadear */
+}
+
+/* Ajustes para diferentes tamaños de pantalla (opcional) */
+@media (max-width: 600px) {
+    .titulo-maquina-escribir {
+        font-size: 1.5em; /* Reduce el tamaño en pantallas pequeñas */
+    }
+}
+

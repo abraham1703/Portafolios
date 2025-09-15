@@ -1,0 +1,606 @@
+html{
+  scroll-behavior: smooth;
+}
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fcfbfb;
+  color: #000000;
+  line-height: 1.2;
+  overflow-x: hidden;
+}
+
+
+
+.container {
+  width: 100%; /* Cambio: ocupa todo el ancho disponible */
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 10px; /* Espaciado lateral para evitar desbordes */
+}
+
+
+
+
+/* Estilos para el encabezado */
+.encabezado {
+  padding: 20px 0; /* Espaciado vertical en el encabezado */
+}
+
+/* Estilos para la barra de navegación */
+.barra-navegacion .contenedor-nav {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 1px; /* Espaciado lateral para evitar desbordes */
+  display: flex;
+  flex-direction: column; /* Mantenemos column para que el icono y el nombre estén uno encima del otro */
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Estilos para el título del sitio */
+.nombre-sitio {
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin: 0 60px; /* Este margen podría necesitar ajuste si se superpone con el menú móvil */
+  white-space: nowrap;
+}
+
+
+/* Estilos para los enlaces del menú */
+.enlace-menu {
+  display: flex;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  transition: color 0.3s;
+  font-weight: bold; /* Hace el texto más grueso */
+  margin-bottom: 20px;
+}
+
+.menu-lateral ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; /* Asegura que no haya puntos */
+}
+
+.menu-lateral li {
+  padding-left: 2px; /* Añade un espacio de 2px a la izquierda de cada elemento */
+}
+
+.enlace-menu:hover {
+  color: #ac9d9d;
+}
+
+.enlace-menu::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ac9d9d;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.enlace-menu:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* Estilos para el ícono del menú móvil */
+.boton-menu-movil {
+  background: transparent;
+
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute; /* Posición fija en la esquina superior izquierda */
+  top: 30px; /* Ajustado para que esté más abajo */
+  left: 20px;
+  z-index: 2; /* Asegura que esté por encima de otros elementos */
+  display: none; /* Oculto por defecto en escritorio, se mostrará en móvil */
+}
+
+.boton-menu-movil .barra {
+  display: block; /* Cambiado de flex a block para que las barras se apilen correctamente */
+  width: 25px; /* Ancho de las barras */
+  height: 3px; /* Grosor de las barras */
+  background-color: rgb(255, 255, 255);
+  margin: 5px 0; /* Espacio entre las barras */
+  transition: all 0.3s ease-in-out;
+   
+}
+
+
+/* Estilos para el menú principal (ul) */
+.menu-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 10px 10px;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* Estilos para el menú lateral */
+.menu-lateral {
+  position: fixed; /* Fijo en la pantalla */
+  display: flex;
+  justify-content: left;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ancho del menú lateral */
+  height: 40%;
+  background-color: rgba(63, 4, 4, 0.9);
+  padding: 50px 20px;
+  transform: translateX(-100%); /* Oculto por defecto, fuera de la pantalla */
+  transition: transform 0.4s ease-in-out;
+  z-index: 7; /* Asegura que esté por encima de la mayoría de los contenidos */
+border: 1px solid rgb(0, 0, 0);
+}
+
+/* Clase para mostrar el menú (se añade/quita con JavaScript) */
+.menu-lateral.active {
+  transform: translateX(0); /* Muestra el menú */
+}
+
+/* Estilos para el botón de cerrar del menú lateral */
+.boton-cerrar-menu {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: rgb(243, 243, 243);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+.Abraham {
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+/* Ajustes para la responsividad: mostrar el menú móvil */
+@media (max-width: 768px) {
+  .barra-navegacion .contenedor-nav {
+    justify-content: center; /* Centra los elementos si el menú no está abierto */
+  }
+  .menu-principal {
+    display: none; /* Oculta el menú principal en pantallas pequeñas */
+   
+  }
+  .boton-menu-movil {
+    display: block; /* Muestra el ícono del menú hamburguesa en pantallas pequeñas */
+  }
+  .nombre-sitio {
+      margin-left: 50px; /* Ajuste para el nombre del sitio cuando el menú móvil está presente */
+  }
+}
+
+
+
+
+
+/*CONTENDOR 00 TITULO SUBTITULOS, BOTONES,REDE SOCILAES, 
+FONDO ESTA ADPTADO A TELEFONOS PEQUEÑOS CADA ELEMENTO
+ESTA UNO ABAJO DEL OTRO CENTRADO Y ALINIADO SON FLEXIBLE. EL 
+TAMÑO DE LAS LETRAS ES ADPTAVLE 
+*/
+
+
+.container00 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+
+.fondo{
+ background-image: url(src/8155824.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative; /* Add this line */
+     z-index: 1; 
+}
+
+.fondo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* The 0.5 value controls the black filter's intensity */
+    z-index: -1; /* This places the filter behind the content */
+}
+
+
+
+
+.cont {
+  width: 100%;
+}
+
+h1 {
+  font-size: clamp(3rem, 1vw, 2rem); /* Tamaño adaptable */
+  margin: 0 0 1rem 0;
+  color: #fcfbfb;
+}
+
+.pf00 {
+  font-size: clamp(1rem, 4vw, 1.2rem); /* Tamaño adaptable */
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color:#fcfbfb ;
+}
+
+.autor{
+  color: #E37357;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.btn {
+  /* Propiedades de estilo base */
+  background-color: transparent; /* Un rojo cálido */
+  color: #ffffff; /* Texto blanco */
+  border: 1px solid  #000000; /* Borde del mismo color que el fondo */
+  padding: 12px 24px; /* Aumento del padding para un mejor tamaño */
+  text-decoration: none;
+
+  border-radius: 25px; /* Bordes más redondeados */
+  cursor: pointer;
+  display: inline-block;
+  
+  /* Animación */
+  transition: all 0.4s ease-in-out; /* Transición más suave para todas las propiedades */
+}
+
+.btn:hover {
+  /* Efecto al pasar el cursor */
+  background-color: #8B0000; /* Un rojo más oscuro para el hover */
+  border-color: #8B0000; /* El borde también se oscurece */
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+/* Opcional: Si quieres un estilo diferente para el borde al pasar el cursor */
+.btn-alternativo:hover {
+  background-color: transparent;
+  color: #A52A2A;
+  border-color: #A52A2A;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Lista que contiene los iconos */
+.social-icons {
+  list-style: none;
+  padding: 50px;
+  position: relative;
+  justify-content: center;
+}
+
+/* Estilo de los enlaces y los iconos */
+.social-icons a {
+  font-size: 40px;
+  color: #25D366;
+  transition: transform 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Colores específicos para cada icono al pasar el cursor */
+.social-icons .whatsapp:hover {
+  transform: scale(1.2);
+}
+
+
+
+.imagen-derecha {
+  display: none; /* Oculta la imagen por defecto */
+}
+
+.imagen-derecha img {
+
+width: 300px;
+z-index: 4;
+position: relative;
+right: 0px;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*CONTENDOR YOP VACIO 
+*/
+
+.containe_yop{
+padding: 200px;
+margin: 0 auto;
+width: 100%;
+max-width: 1600px;
+}
+
+
+
+
+/*CONTENEDOR 01 HABILIDADES*/
+.container01 {
+  border: 1px solid black;
+    padding: 30px 5px; /* Reducido el padding */
+    background-color: #f8f9fa;
+}
+
+.sub {
+  
+      display: flex; /* Coloca los elementos uno al lado del otro */
+  justify-content: center;
+    font-size: 14px; /* Fuente más pequeña */
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+.texto_cambiante {
+    text-align: center;
+    font-size: 1rem; /* Fuente más pequeña */
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    padding: 30px 0;
+}
+
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Columnas más estrechas */
+    gap: 15px; /* Espacio más pequeño entre las tarjetas */
+    max-width: 700px; /* Ancho máximo reducido */
+    margin: 0 auto;
+}
+
+.habilidad-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px; /* Padding interno más pequeño */
+    background-color: #ffffff;
+    border-radius: 15px; /* Radio de borde más pequeño */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.habilidad-card:hover {
+    transform: translateY(-3px); /* Efecto de levantamiento más sutil */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.habilidad-card img {
+    width: 30px; /* Tamaño del icono más pequeño */
+    height: 30px; /* Tamaño del icono más pequeño */
+    object-fit: contain;
+    margin-bottom: 8px; /* Espacio más pequeño */
+    filter: brightness(0.9) grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.habilidad-card:hover img {
+    filter: none;
+}
+
+.habilidad-nombre {
+    font-size: 0.9rem; /* Fuente del nombre más pequeña */
+    font-weight: 500;
+    color: #333;
+    font-family:  sans-serif;
+}
+
+
+
+
+/* MEDIA QUERIES */
+
+/*COMO SE VE LOS COMPONETES DEL CONTENEDOR CONTAINER 00
+CUANDO LA PANTALLA ES IGUAL O SUPERIOL A 751 PX, SE ENCUETRA
+TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
+*/
+
+
+/* Tabletas y Escritorios pequeños (desde 751px) */
+@media (min-width: 751px) {
+
+  .nav .container {
+    flex-direction: row; /* Cambia a fila para pantallas más grandes */
+    justify-content: space-between; /* Espacia los elementos a los extremos */
+  }
+  
+  ul {
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+    justify-content: right;
+  }
+
+  .container00 {
+    flex-direction: row; /* Cambia a fila para pantallas más grandes */
+    text-align: left; /* Alinea el texto a la izquierda */
+    gap: 20px; 
+    align-items: flex-start; 
+    padding: 70px 20px;
+    height:450px ;
+  }
+
+.Abraham {
+ gap: 20px;
+}
+  .cont {
+    width: 50%; /* Limita el ancho del texto a la mitad de la pantalla */
+    margin:  0 40px;
+  }
+
+  h1 {
+  font-size:2rem;
+  margin: 0 0 1rem 0;
+  width: 55%;
+  overflow-wrap: break-word;
+}
+.pf00 {
+  font-size: 1.5rem;
+}
+  .btn-container {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .imagen-derecha {
+  display: flex;
+
+  }
+
+
+.social-icons {
+  bottom: 200px; /* Separacion del borde inferior de la pantalla */
+  left:  500px; /* Separacion del borde derecho de la pantalla */
+  z-index: 1000;
+ 
+}
+ 
+.social-icons a {
+  font-size: 60px;
+}
+
+
+.titulos-container {
+  display: flex; /* Convierte el contenedor en un contenedor flexible */
+  justify-content: center; /* Opcional: Centra los títulos horizontalmente */
+  align-items: center; /* Opcional: Centra los títulos verticalmente (si tienen diferentes alturas) */
+  gap: 20px; /* Opcional: Agrega espacio entre los títulos */
+}
+
+
+}
+
+/* Teléfonos muy pequeños (hasta 450px) */
+@media (max-width: 450px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    
+  }
+.btn {
+ margin: 10px;
+}
+
+}
+
+/* Teléfonos muy, muy pequeños */
+@media (max-width: 320px) {
+  header {
+    padding: 15px;
+  }
+}
+
+
+
+
+
+
+.titulo-maquina-escribir {
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada, típica de máquinas de escribir */
+    overflow: hidden; /* Oculta el texto que aún no se ha escrito */
+    border-right: .15em solid orange; /* Simula el cursor parpadeante */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    margin: 0 auto; /* Centra el título */
+    letter-spacing: .14em; /* Espacio entre letras */
+    animation:
+        typing 3.5s steps(30, end), /* Duración y pasos de la animación */
+        blink-caret .75s step-end infinite; /* Animación del cursor */
+    width: 0; /* Inicialmente, el ancho es 0, el texto se irá revelando */
+}
+
+/* Keyframes para la animación de escritura */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Keyframes para la animación del cursor parpadeante */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange } /* Color del cursor al parpadear */
+}
+
+/* Ajustes para diferentes tamaños de pantalla (opcional) */
+@media (max-width: 600px) {
+    .titulo-maquina-escribir {
+        font-size: 1.1em; /* Reduce el tamaño en pantallas pequeñas */
+    }
+
+    h1 {
+  font-size:1.5rem;
+  margin: 0 0 1rem 0;
+}
+
+}
+
+
+
+
