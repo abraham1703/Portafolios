@@ -1,3 +1,6 @@
+
+//efeto de maquina de H1 TITULO
+
 // Selecciona el elemento del título por su ID
 const titulo = document.getElementById('typewriter-title');
 
@@ -35,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-//proseso 2: texto rotativo
+//proseso 2: texto rotativo HABILIDADES
 
 // Array con los textos que deseas mostrar
 const textos = [
@@ -99,3 +102,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const enlacesMenu = document.querySelectorAll('.enlace-menu');
+
+  enlacesMenu.forEach(enlace => {
+    enlace.addEventListener('click', function(e) {
+      e.preventDefault(); // Evita el comportamiento predeterminado de los enlaces (el salto)
+      
+      const destinoId = this.getAttribute('href'); // Obtiene el valor del atributo href
+      const seccionDestino = document.querySelector(destinoId); // Busca el elemento con ese ID
+      
+      if (seccionDestino) {
+        // Usa el método scrollIntoView para desplazar a la sección
+        seccionDestino.scrollIntoView({
+          behavior: 'smooth', // Este es el efecto de scroll suave
+          block: 'start' // Alinea el inicio del elemento con la parte superior de la vista
+        });
+      }
+    });
+  });
+});
+
+
+//titulos mostrando contenedores
+
+document.addEventListener('DOMContentLoaded', () => {
+    const subLinks = document.querySelectorAll('.sub');
+    const contentSections = document.querySelectorAll('.contenido-dinamico');
+
+    subLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            contentSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const linkText = link.textContent.trim().toLowerCase();
+            let sectionToShowId;
+
+            if (linkText === 'habilidades') {
+                sectionToShowId = 'contenido-habilidades';
+            } else if (linkText === 'certificados') {
+                sectionToShowId = 'contenido-certificados';
+            } else if (linkText === 'proyectos') {
+                sectionToShowId = 'contenido-proyectos';
+            }
+
+            if (sectionToShowId) {
+                const sectionToShow = document.getElementById(sectionToShowId);
+                if (sectionToShow) {
+                    sectionToShow.style.display = 'block';
+                }
+            }
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
