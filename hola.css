@@ -58,8 +58,9 @@ body {
   color: white;
   text-decoration: none;
   transition: color 0.3s;
-  margin: 0 60px; /* Este margen podría necesitar ajuste si se superpone con el menú móvil */
   white-space: nowrap;
+  z-index: 1;
+  min-width: 80%;
 }
 
 
@@ -72,6 +73,7 @@ body {
   transition: color 0.3s;
   font-weight: bold; /* Hace el texto más grueso */
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .menu-lateral ul {
@@ -113,7 +115,7 @@ body {
   cursor: pointer;
   padding: 10px;
   position: absolute; /* Posición fija en la esquina superior izquierda */
-  top: 30px; /* Ajustado para que esté más abajo */
+  top: 50px; /* Ajustado para que esté más abajo */
   left: 20px;
   z-index: 2; /* Asegura que esté por encima de otros elementos */
   display: none; /* Oculto por defecto en escritorio, se mostrará en móvil */
@@ -126,23 +128,8 @@ body {
   background-color: rgb(255, 255, 255);
   margin: 5px 0; /* Espacio entre las barras */
   transition: all 0.3s ease-in-out;
-   
 }
 
-
-/* Estilos para el menú principal (ul) */
-.menu-principal {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 10px 10px;
-  gap: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
 
 
 /* Estilos para el menú lateral */
@@ -152,7 +139,8 @@ body {
   justify-content: left;
   top: 0;
   left: 0;
-  width: 100%; /* Ancho del menú lateral */
+  width:55%;
+  max-width: 100%; /* Ancho del menú lateral */
   height: 40%;
   background-color: rgba(63, 4, 4, 0.9);
   padding: 50px 20px;
@@ -182,17 +170,6 @@ border: 1px solid rgb(0, 0, 0);
 
 
 
-
-.Abraham {
-  display: flex;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: white;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-
 /* Ajustes para la responsividad: mostrar el menú móvil */
 @media (max-width: 768px) {
   .barra-navegacion .contenedor-nav {
@@ -200,7 +177,6 @@ border: 1px solid rgb(0, 0, 0);
   }
   .menu-principal {
     display: none; /* Oculta el menú principal en pantallas pequeñas */
-   
   }
   .boton-menu-movil {
     display: block; /* Muestra el ícono del menú hamburguesa en pantallas pequeñas */
@@ -236,7 +212,7 @@ TAMÑO DE LAS LETRAS ES ADPTAVLE
     background-repeat: no-repeat;
     background-position: center;
     position: relative; /* Add this line */
-     z-index: 1; 
+    z-index: 1; 
 }
 
 .fondo::before {
@@ -258,7 +234,7 @@ TAMÑO DE LAS LETRAS ES ADPTAVLE
 }
 
 h1 {
-  font-size: clamp(3rem, 1vw, 2rem); /* Tamaño adaptable */
+  font-size: clamp(2rem, 1vw, 2rem); /* Tamaño adaptable */
   margin: 0 0 1rem 0;
   color: #fcfbfb;
 }
@@ -329,16 +305,14 @@ h1 {
 /* Lista que contiene los iconos */
 .social-icons {
   list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  display: flex;
-  gap: 20px;
+  padding: 50px;
+  position: relative;
   justify-content: center;
 }
 
 /* Estilo de los enlaces y los iconos */
 .social-icons a {
-  font-size: 40px;
+  font-size:50px;
   color: #25D366;
   transition: transform 0.3s ease, color 0.3s ease; /* Transiciones suaves */
 }
@@ -390,17 +364,36 @@ max-width: 1600px;
   border: 1px solid black;
     padding: 30px 5px; /* Reducido el padding */
     background-color: #f8f9fa;
+    width: 100%;
+    height: 700px;
+
+    
+}
+
+
+
+.titulos-container{
+
+display: flex; /* CAMBIA DE 'grid' A 'flex' */
+ justify-content: center; /* Centra los títulos horizontalmente */
+    align-items: center; /* Centra los títulos verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    padding: 0 10px; /* Agrega un pequeño espacio a los lados para que no se peguen a los bordes */
+    gap: 20px; /* Opcional: añade espacio entre los títulos */
+
 }
 
 .sub {
-  
-      display: flex; /* Coloca los elementos uno al lado del otro */
-  justify-content: center;
-    font-size: 14px; /* Fuente más pequeña */
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-size: 15px; /* Fuente más pequeña */
+    margin: 1px 20px;
+    font-weight: 600; /*negritas*/
     color: #000000;
     cursor: pointer;
+    margin: 5px 40px;
+    text-align: center;
+    
+  
+    
 }
 
 
@@ -458,7 +451,13 @@ max-width: 1600px;
     font-family:  sans-serif;
 }
 
+.contenido-dinamico {
+    display: none;
+}
 
+#contenido-habilidades {
+    display: block; /* o 'grid', según cómo tengas diseñado tu contenido */
+}
 
 
 /* MEDIA QUERIES */
@@ -469,6 +468,32 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
 */
 
 
+
+
+/* Tabletas y Escritorios pequeños (desde 751px) */
+@media (min-width: 1100px) {
+
+  h1 {
+  font-size:2rem;
+  margin: 0 0 1rem 0;
+  width: 55%;
+    height: 100px;
+    color: #ffffff;
+  overflow-wrap: break-word;
+}
+
+
+
+
+
+  }
+
+
+
+
+
+
+
 /* Tabletas y Escritorios pequeños (desde 751px) */
 @media (min-width: 751px) {
 
@@ -477,10 +502,7 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
     justify-content: space-between; /* Espacia los elementos a los extremos */
   }
   
-  ul {
-    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
-    justify-content: right;
-  }
+
 
   .container00 {
     flex-direction: row; /* Cambia a fila para pantallas más grandes */
@@ -491,22 +513,24 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
     height:450px ;
   }
 
-.Abraham {
- gap: 20px;
-}
+
   .cont {
     width: 50%; /* Limita el ancho del texto a la mitad de la pantalla */
     margin:  0 40px;
+    
   }
 
   h1 {
   font-size:2rem;
   margin: 0 0 1rem 0;
-  width: 55%;
+  width: 90%;
+  height: 80px;
   overflow-wrap: break-word;
+  
 }
 .pf00 {
   font-size: 1.5rem;
+  
 }
   .btn-container {
     flex-direction: row;
@@ -519,9 +543,10 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
 
 
 .social-icons {
-  
   bottom: 200px; /* Separacion del borde inferior de la pantalla */
-  left:  500px; /* Separacion del borde derecho de la pantalla */
+  display: flex;
+  justify-content: right;
+  margin-left: 100%;
   z-index: 1000;
  
 }
@@ -536,7 +561,24 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
   justify-content: center; /* Opcional: Centra los títulos horizontalmente */
   align-items: center; /* Opcional: Centra los títulos verticalmente (si tienen diferentes alturas) */
   gap: 20px; /* Opcional: Agrega espacio entre los títulos */
+
 }
+
+
+.menu-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:right;
+  padding: 0px 90px;
+  margin-top: -33px;
+  list-style: none;
+  gap: 25px;
+  width: 100%;
+  cursor: pointer;
+  z-index: 8;
+  
+}
+
 
 
 }
@@ -552,6 +594,16 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
  margin: 10px;
 }
 
+  h1 {
+  font-size:2rem;
+  margin: 0 0 1rem 0;
+  width: 90%;
+  height: 80px;
+  overflow-wrap: break-word;
+  
+  
+}
+
 }
 
 /* Teléfonos muy, muy pequeños */
@@ -559,6 +611,13 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
   header {
     padding: 15px;
   }
+
+    h1 {
+  margin: 0 0 1rem 0;
+  width: 96%;
+  height: 130px;
+  overflow-wrap: break-word;
+}
 }
 
 
