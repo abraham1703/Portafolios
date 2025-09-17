@@ -1,7 +1,6 @@
-html{
+html {
   scroll-behavior: smooth;
 }
-
 
 * {
   margin: 0;
@@ -13,14 +12,12 @@ html{
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #fcfbfb;
   color: #000000;
   line-height: 1.2;
   overflow-x: hidden;
 }
-
-
 
 .container {
   width: 100%; /* Cambio: ocupa todo el ancho disponible */
@@ -29,9 +26,6 @@ body {
   box-sizing: border-box;
   padding: 0 10px; /* Espaciado lateral para evitar desbordes */
 }
-
-
-
 
 /* Estilos para el encabezado */
 .encabezado {
@@ -63,7 +57,6 @@ body {
   min-width: 80%;
 }
 
-
 /* Estilos para los enlaces del menú */
 .enlace-menu {
   display: flex;
@@ -91,7 +84,7 @@ body {
 }
 
 .enlace-menu::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -105,7 +98,6 @@ body {
 .enlace-menu:hover::after {
   transform: scaleX(1);
 }
-
 
 /* Estilos para el ícono del menú móvil */
 .boton-menu-movil {
@@ -130,8 +122,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-
-
 /* Estilos para el menú lateral */
 .menu-lateral {
   position: fixed; /* Fijo en la pantalla */
@@ -139,7 +129,7 @@ body {
   justify-content: left;
   top: 0;
   left: 0;
-  width:55%;
+  width: 55%;
   max-width: 100%; /* Ancho del menú lateral */
   height: 40%;
   background-color: rgba(63, 4, 4, 0.9);
@@ -147,7 +137,7 @@ body {
   transform: translateX(-100%); /* Oculto por defecto, fuera de la pantalla */
   transition: transform 0.4s ease-in-out;
   z-index: 7; /* Asegura que esté por encima de la mayoría de los contenidos */
-border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 /* Clase para mostrar el menú (se añade/quita con JavaScript) */
@@ -167,9 +157,6 @@ border: 1px solid rgb(0, 0, 0);
   cursor: pointer;
 }
 
-
-
-
 /* Ajustes para la responsividad: mostrar el menú móvil */
 @media (max-width: 768px) {
   .barra-navegacion .contenedor-nav {
@@ -182,13 +169,9 @@ border: 1px solid rgb(0, 0, 0);
     display: block; /* Muestra el ícono del menú hamburguesa en pantallas pequeñas */
   }
   .nombre-sitio {
-      margin-left: 50px; /* Ajuste para el nombre del sitio cuando el menú móvil está presente */
+    margin-left: 50px; /* Ajuste para el nombre del sitio cuando el menú móvil está presente */
   }
 }
-
-
-
-
 
 /*CONTENDOR 00 TITULO SUBTITULOS, BOTONES,REDE SOCILAES, 
 FONDO ESTA ADPTADO A TELEFONOS PEQUEÑOS CADA ELEMENTO
@@ -196,38 +179,38 @@ ESTA UNO ABAJO DEL OTRO CENTRADO Y ALINIADO SON FLEXIBLE. EL
 TAMÑO DE LAS LETRAS ES ADPTAVLE 
 */
 
-
 .container00 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 20px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px;
+  text-align: center;
 }
 
-
-.fondo{
- background-image: url(src/8155824.avif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative; /* Add this line */
-    z-index: 1; 
+.fondo {
+  background-image: url(src/8155824.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative; /* Add this line */
+  z-index: 1;
 }
 
 .fondo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* The 0.5 value controls the black filter's intensity */
-    z-index: -1; /* This places the filter behind the content */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* The 0.5 value controls the black filter's intensity */
+  z-index: -1; /* This places the filter behind the content */
 }
-
-
-
 
 .cont {
   width: 100%;
@@ -243,11 +226,11 @@ h1 {
   font-size: clamp(1rem, 4vw, 1.2rem); /* Tamaño adaptable */
   line-height: 1.5;
   margin-bottom: 20px;
-  color:#fcfbfb ;
+  color: #fcfbfb;
 }
 
-.autor{
-  color: #E37357;
+.autor {
+  color: #e37357;
 }
 
 .btn-container {
@@ -257,27 +240,26 @@ h1 {
   gap: 10px;
 }
 
-
 .btn {
   /* Propiedades de estilo base */
   background-color: transparent; /* Un rojo cálido */
   color: #ffffff; /* Texto blanco */
-  border: 1px solid  #000000; /* Borde del mismo color que el fondo */
+  border: 1px solid #000000; /* Borde del mismo color que el fondo */
   padding: 12px 24px; /* Aumento del padding para un mejor tamaño */
   text-decoration: none;
 
   border-radius: 25px; /* Bordes más redondeados */
   cursor: pointer;
   display: inline-block;
-  
+
   /* Animación */
   transition: all 0.4s ease-in-out; /* Transición más suave para todas las propiedades */
 }
 
 .btn:hover {
   /* Efecto al pasar el cursor */
-  background-color: #8B0000; /* Un rojo más oscuro para el hover */
-  border-color: #8B0000; /* El borde también se oscurece */
+  background-color: #8b0000; /* Un rojo más oscuro para el hover */
+  border-color: #8b0000; /* El borde también se oscurece */
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
 }
@@ -285,22 +267,10 @@ h1 {
 /* Opcional: Si quieres un estilo diferente para el borde al pasar el cursor */
 .btn-alternativo:hover {
   background-color: transparent;
-  color: #A52A2A;
-  border-color: #A52A2A;
+  color: #a52a2a;
+  border-color: #a52a2a;
   transform: scale(1.05);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Lista que contiene los iconos */
 .social-icons {
@@ -312,8 +282,8 @@ h1 {
 
 /* Estilo de los enlaces y los iconos */
 .social-icons a {
-  font-size:50px;
-  color: #25D366;
+  font-size: 50px;
+  color: #25d366;
   transition: transform 0.3s ease, color 0.3s ease; /* Transiciones suaves */
 }
 
@@ -322,143 +292,117 @@ h1 {
   transform: scale(1.2);
 }
 
-
-
 .imagen-derecha {
   display: none; /* Oculta la imagen por defecto */
 }
 
 .imagen-derecha img {
-
-width: 300px;
-z-index: 4;
-position: relative;
-right: 0px;
-
+  width: 300px;
+  z-index: 4;
+  position: relative;
+  right: 0px;
 }
-
-
-
-
-
-
-
-
-
 
 /*CONTENDOR YOP VACIO 
 */
 
-.containe_yop{
-padding: 200px;
-margin: 0 auto;
-width: 100%;
-max-width: 1600px;
+.containe_yop {
+  width: 100%;
+  height: 700px;
+  max-width: 1600px;
 }
-
-
-
 
 /*CONTENEDOR 01 HABILIDADES*/
 .container01 {
-  border: 1px solid black;
-    padding: 30px 5px; /* Reducido el padding */
-    background-color: #f8f9fa;
-    width: 100%;
-    height: 700px;
-
-    
+  padding: 30px 5px; /* Reducido el padding */
+  background-color: #f8f9fa;
+  width: 100%;
+  height: 700px;
 }
 
-
-
-.titulos-container{
-
-display: flex; /* CAMBIA DE 'grid' A 'flex' */
- justify-content: center; /* Centra los títulos horizontalmente */
-    align-items: center; /* Centra los títulos verticalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
-    padding: 0 10px; /* Agrega un pequeño espacio a los lados para que no se peguen a los bordes */
-    gap: 20px; /* Opcional: añade espacio entre los títulos */
-
+.titulos-container {
+  display: flex; /* CAMBIA DE 'grid' A 'flex' */
+  justify-content: center; /* Centra los títulos horizontalmente */
+  align-items: center; /* Centra los títulos verticalmente */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+  padding: 0 10px; /* Agrega un pequeño espacio a los lados para que no se peguen a los bordes */
+  gap: 20px; /* Opcional: añade espacio entre los títulos */
 }
 
 .sub {
-    font-size: 15px; /* Fuente más pequeña */
-    margin: 1px 20px;
-    font-weight: 600; /*negritas*/
-    color: #000000;
-    cursor: pointer;
-    margin: 5px 40px;
-    text-align: center;
-    
-  
-    
+  font-size: 15px; /* Fuente más pequeña */
+  margin: 1px 20px;
+  font-weight: 600; /*negritas*/
+  color: #000000;
+  cursor: pointer;
+  margin: 5px 40px;
+  text-align: center;
 }
 
-
 .texto_cambiante {
-    text-align: center;
-    font-size: 1rem; /* Fuente más pequeña */
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-    padding: 30px 0;
+  text-align: center;
+  font-size: 1rem; /* Fuente más pequeña */
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  padding: 30px 0;
 }
 
 .habilidades-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Columnas más estrechas */
-    gap: 15px; /* Espacio más pequeño entre las tarjetas */
-    max-width: 700px; /* Ancho máximo reducido */
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(120px, 1fr)
+  ); /* Columnas más estrechas */
+  gap: 15px; /* Espacio más pequeño entre las tarjetas */
+  max-width: 700px; /* Ancho máximo reducido */
+  margin: 0 auto;
 }
 
 .habilidad-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 12px; /* Padding interno más pequeño */
-    background-color: #ffffff;
-    border-radius: 15px; /* Radio de borde más pequeño */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px; /* Padding interno más pequeño */
+  background-color: #ffffff;
+  border-radius: 15px; /* Radio de borde más pequeño */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .habilidad-card:hover {
-    transform: translateY(-3px); /* Efecto de levantamiento más sutil */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px); /* Efecto de levantamiento más sutil */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .habilidad-card img {
-    width: 30px; /* Tamaño del icono más pequeño */
-    height: 30px; /* Tamaño del icono más pequeño */
-    object-fit: contain;
-    margin-bottom: 8px; /* Espacio más pequeño */
-    filter: brightness(0.9) grayscale(100%);
-    transition: filter 0.3s ease;
+  width: 30px; /* Tamaño del icono más pequeño */
+  height: 30px; /* Tamaño del icono más pequeño */
+  object-fit: contain;
+  margin-bottom: 8px; /* Espacio más pequeño */
+  filter: brightness(0.9) grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
 .habilidad-card:hover img {
-    filter: none;
+  filter: none;
 }
 
 .habilidad-nombre {
-    font-size: 0.9rem; /* Fuente del nombre más pequeña */
-    font-weight: 500;
-    color: #333;
-    font-family:  sans-serif;
+  font-size: 0.9rem; /* Fuente del nombre más pequeña */
+  font-weight: 500;
+  color: #333;
+  font-family: sans-serif;
 }
 
 .contenido-dinamico {
-    display: none;
+  display: none;
 }
 
 #contenido-habilidades {
-    display: block; /* o 'grid', según cómo tengas diseñado tu contenido */
+  display: block; /* o 'grid', según cómo tengas diseñado tu contenido */
 }
-
 
 /* MEDIA QUERIES */
 
@@ -467,120 +411,87 @@ CUANDO LA PANTALLA ES IGUAL O SUPERIOL A 751 PX, SE ENCUETRA
 TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
 */
 
-
-
-
 /* Tabletas y Escritorios pequeños (desde 751px) */
 @media (min-width: 1100px) {
-
   h1 {
-  font-size:2rem;
-  margin: 0 0 1rem 0;
-  width: 55%;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    width: 55%;
     height: 100px;
     color: #ffffff;
-  overflow-wrap: break-word;
-}
-
-
-
-
-
+    overflow-wrap: break-word;
   }
-
-
-
-
-
-
+}
 
 /* Tabletas y Escritorios pequeños (desde 751px) */
 @media (min-width: 751px) {
-
   .nav .container {
     flex-direction: row; /* Cambia a fila para pantallas más grandes */
     justify-content: space-between; /* Espacia los elementos a los extremos */
   }
-  
-
 
   .container00 {
     flex-direction: row; /* Cambia a fila para pantallas más grandes */
     text-align: left; /* Alinea el texto a la izquierda */
-    gap: 20px; 
-    align-items: flex-start; 
+    gap: 20px;
+    align-items: flex-start;
     padding: 70px 20px;
-    height:450px ;
+    height: 450px;
   }
-
 
   .cont {
     width: 50%; /* Limita el ancho del texto a la mitad de la pantalla */
-    margin:  0 40px;
-    
+    margin: 0 40px;
   }
 
   h1 {
-  font-size:2rem;
-  margin: 0 0 1rem 0;
-  width: 90%;
-  height: 80px;
-  overflow-wrap: break-word;
-  
-}
-.pf00 {
-  font-size: 1.5rem;
-  
-}
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    width: 90%;
+    height: 80px;
+    overflow-wrap: break-word;
+  }
+  .pf00 {
+    font-size: 1.5rem;
+  }
   .btn-container {
     flex-direction: row;
     justify-content: flex-start;
   }
   .imagen-derecha {
-  display: flex;
-
+    display: flex;
   }
 
+  .social-icons {
+    display: flex;
+    justify-content: right;
+    margin-left: 100%;
+    z-index: 1000;
+  }
 
-.social-icons {
-  bottom: 200px; /* Separacion del borde inferior de la pantalla */
-  display: flex;
-  justify-content: right;
-  margin-left: 100%;
-  z-index: 1000;
- 
-}
- 
-.social-icons a {
-  font-size: 60px;
-}
+  .social-icons a {
+    font-size: 60px;
+  }
 
+  .titulos-container {
+    display: flex; /* Convierte el contenedor en un contenedor flexible */
+    justify-content: center; /* Opcional: Centra los títulos horizontalmente */
+    align-items: center; /* Opcional: Centra los títulos verticalmente (si tienen diferentes alturas) */
+    gap: 20px; /* Opcional: Agrega espacio entre los títulos */
+  }
 
-.titulos-container {
-  display: flex; /* Convierte el contenedor en un contenedor flexible */
-  justify-content: center; /* Opcional: Centra los títulos horizontalmente */
-  align-items: center; /* Opcional: Centra los títulos verticalmente (si tienen diferentes alturas) */
-  gap: 20px; /* Opcional: Agrega espacio entre los títulos */
-
-}
-
-
-.menu-principal {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:right;
-  padding: 0px 90px;
-  margin-top: -33px;
-  list-style: none;
-  gap: 25px;
-  width: 100%;
-  cursor: pointer;
-  z-index: 8;
-  
-}
-
-
-
+  .menu-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    padding: 0px 90px;
+    margin-top: -33px;
+    list-style: none;
+    gap: 25px;
+    width: 100%;
+    cursor: pointer;
+    z-index: 8;
+  }
 }
 
 /* Teléfonos muy pequeños (hasta 450px) */
@@ -588,22 +499,17 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
   .container {
     flex-direction: column;
     align-items: center;
-    
   }
-.btn {
- margin: 10px;
-}
+  .btn {
+    margin: 10px;
+  }
 
   h1 {
-  font-size:2rem;
-  margin: 0 0 1rem 0;
-  width: 90%;
-  height: 80px;
-  overflow-wrap: break-word;
-  
-  
-}
-
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    width: 100%;
+    height: 80px;
+  }
 }
 
 /* Teléfonos muy, muy pequeños */
@@ -612,57 +518,55 @@ TITULOS , SUBTITULOS , BOTONES , DEL LADO IZQUIEDO DENTRO DEL DIV CONT
     padding: 15px;
   }
 
-    h1 {
-  margin: 0 0 1rem 0;
-  width: 96%;
-  height: 130px;
-  overflow-wrap: break-word;
+  h1 {
+    margin: 0 0 1rem 0;
+    width: 96%;
+    height: 130px;
+    overflow-wrap: break-word;
+  }
 }
-}
-
-
-
-
-
 
 .titulo-maquina-escribir {
-    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada, típica de máquinas de escribir */
-    overflow: hidden; /* Oculta el texto que aún no se ha escrito */
-    border-right: .15em solid orange; /* Simula el cursor parpadeante */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-    margin: 0 auto; /* Centra el título */
-    letter-spacing: .14em; /* Espacio entre letras */
-    animation:
-        typing 3.5s steps(30, end), /* Duración y pasos de la animación */
-        blink-caret .75s step-end infinite; /* Animación del cursor */
-    width: 0; /* Inicialmente, el ancho es 0, el texto se irá revelando */
+  font-family: "Courier New", Courier, monospace; /* Fuente monoespaciada, típica de máquinas de escribir */
+  overflow: hidden; /* Oculta el texto que aún no se ha escrito */
+  border-right: 0.15em solid orange; /* Simula el cursor parpadeante */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  margin: 0 auto; /* Centra el título */
+  letter-spacing: 0.14em; /* Espacio entre letras */
+  animation: typing 3.5s steps(30, end),
+    /* Duración y pasos de la animación */ blink-caret 0.75s step-end infinite; /* Animación del cursor */
+  width: 0; /* Inicialmente, el ancho es 0, el texto se irá revelando */
 }
 
 /* Keyframes para la animación de escritura */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* Keyframes para la animación del cursor parpadeante */
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange } /* Color del cursor al parpadear */
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  } /* Color del cursor al parpadear */
 }
 
 /* Ajustes para diferentes tamaños de pantalla (opcional) */
 @media (max-width: 600px) {
-    .titulo-maquina-escribir {
-        font-size: 1.1em; /* Reduce el tamaño en pantallas pequeñas */
-    }
+  .titulo-maquina-escribir {
+    font-size: 1.1em; /* Reduce el tamaño en pantallas pequeñas */
+  }
 
-    h1 {
-  font-size:1.5rem;
-  margin: 0 0 1rem 0;
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+  }
 }
-
-}
-
-
-
-
