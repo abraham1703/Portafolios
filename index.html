@@ -1,169 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="descripcion" content="Portafolio de Dasarollo Web. Explora mis proyectos en Html5 Css y 
-     JavaScript">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="descripcion"
+      content="Portafolio de Dasarollo Web. Explora mis proyectos en Html5 Css y 
+     JavaScript"
+    />
     <title>Portafio de Abraham Castro Desarrollo web</title>
-    <link rel="stylesheet" href="hola.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="hola.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="fondo">
-        <header class="encabezado">
-            <nav class="barra-navegacion">
-                <div class="contenedor-nav">
-                    <button class="boton-menu-movil" aria-label="Abrir menú">
-                        <div class="barra"></div>
-                        <div class="barra"></div>
-                        <div class="barra"></div>
-                    </button>
-                    <a class="nombre-sitio">Abraham Castro</a>
-                    <ul class="menu-principal">
-                        <li><a class="enlace-menu" href="#">Inicio</a></li>
-                        <li><a class="enlace-menu" href="#">Acerca de mi</a></li>
-                        <li><a class="enlace-menu" href="#seccion-habilidades">Habilidades</a></li>
-                        <li><a class="enlace-menu" href="#">contactame</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <div class="menu-lateral">
-            <button class="boton-cerrar-menu" aria-label="Cerrar menú">&times;</button>
-            <ul>
-                <li><a class="enlace-menu" href="#">Inicio</a></li>
-                <li><a class="enlace-menu" href="#">Acerca de mi</a></li>
-                <li><a class="enlace-menu" href="#seccion-habilidades">Habilidades</a></li>
-                <li><a class="enlace-menu" href="#">contactame</a></li>
+      <header class="encabezado">
+        <nav class="barra-navegacion">
+          <div class="contenedor-nav">
+            <button class="boton-menu-movil" aria-label="Abrir menú">
+              <div class="barra"></div>
+              <div class="barra"></div>
+              <div class="barra"></div>
+            </button>
+            <a class="nombre-sitio">Abraham Castro</a>
+            <ul class="menu-principal">
+              <li><a class="enlace-menu" href="#">Inicio</a></li>
+              <li><a class="enlace-menu" href="#">Acerca de mi</a></li>
+              <li>
+                <a class="enlace-menu" href="#seccion-habilidades"
+                  >Habilidades</a
+                >
+              </li>
+              <li><a class="enlace-menu" href="#">contactame</a></li>
             </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div class="menu-lateral">
+        <button class="boton-cerrar-menu" aria-label="Cerrar menú">
+          &times;
+        </button>
+        <ul>
+          <li><a class="enlace-menu" href="#">Inicio</a></li>
+          <li><a class="enlace-menu" href="#">Acerca de mi</a></li>
+          <li>
+            <a class="enlace-menu" href="#seccion-habilidades">Habilidades</a>
+          </li>
+          <li><a class="enlace-menu" href="#">contactame</a></li>
+        </ul>
+      </div>
+
+      <section class="container00">
+        <div class="cont">
+          <h1 id="typewriter-title"></h1>
+          <p class="pf00">
+            La única forma de hacer un gran trabajo <br />
+            es amar lo que haces. <span class="autor">"Steve Jobs"</span>
+          </p>
+          <button class="btn">Descargar CV</button>
+          <a class="btn" href="https://wa.me/04129874349">Contarame</a>
+
+          <ul class="social-icons">
+            <li>
+              <a
+                href="https://wa.me/04129874349"
+                target="_blank"
+                class="whatsapp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <section class="container00">
-            <div class="cont">
-                <h1 id="typewriter-title"></h1>
-                <p class="pf00">La única forma de hacer un gran trabajo <br>
-                    es amar lo que haces. <span class="autor">"Steve Jobs"</span>
-                </p>
-                <button class="btn">Descargar CV</button>
-                <a class="btn" href="https://wa.me/04129874349">Contarame</a>
-
-                <ul class="social-icons">
-                    <li>
-                        <a href="https://wa.me/04129874349" target="_blank" class="whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="imagen-derecha">
-                </div>
-        </section>
+        <div class="imagen-derecha"></div>
+      </section>
     </div>
 
     <section class="containe_yop"></section>
 
-
-
-
-<section class="container01" id="seccion-habilidades">
-    <div class="titulos-container">
+    <section class="container01" id="seccion-habilidades">
+      <div class="titulos-container">
         <a class="sub" id="link-habilidades">Habilidades</a>
         <a class="sub" id="link-certificados">Certificados</a>
         <a class="sub" id="link-proyectos">Proyectos</a>
-    </div>
+      </div>
 
-    <div class="habilidades-container contenido-dinamico" id="contenido-habilidades">
+      <div
+        class="habilidades-container contenido-dinamico"
+        id="contenido-habilidades"
+      >
         <p class="texto_cambiante" id="texto-rotativo"></p>
         <div class="habilidades-grid">
-            <div class="habilidad-card">
-                <img src="src1/html5.svg" alt="HTML5">
-                <span class="habilidad-nombre">HTML5</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/css_old.svg" alt="CSS3">
-                <span class="habilidad-nombre">CSS3</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/javascript.svg" alt="JavaScript">
-                <span class="habilidad-nombre">JavaScript</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/vscode.svg" alt="Visual Studio Code">
-                <span class="habilidad-nombre">VS Code</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src/sql.png" alt="SQL">
-                <span class="habilidad-nombre">SQL</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/postgresql.svg" alt="PostgreSQL">
-                <span class="habilidad-nombre">PostgreSQL</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/mariadb.svg" alt="MariaDB">
-                <span class="habilidad-nombre">MariaDB</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/sql-server.svg" alt="SQL Server">
-                <span class="habilidad-nombre">SQL Server</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/python.svg" alt="Python">
-                <span class="habilidad-nombre">Python</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/GitHub_dark.svg" alt="GitHub">
-                <span class="habilidad-nombre">GitHub</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/git.svg" alt="Git">
-                <span class="habilidad-nombre">Git</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/godot_engine.svg" alt="Godot Engine">
-                <span class="habilidad-nombre">Godot Engine</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src/xampp.png" alt="XAMPP">
-                <span class="habilidad-nombre">XAMPP</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src1/eclipse.svg" alt="Eclipse">
-                <span class="habilidad-nombre">Eclipse</span>
-            </div>
-            <div class="habilidad-card">
-                <img src="src/pc.png" alt="Computer Maintenance">
-                <span class="habilidad-nombre">Mantenimiento de PC</span>
-            </div>
+          <div class="habilidad-card">
+            <img src="src1/html5.svg" alt="HTML5" />
+            <span class="habilidad-nombre">HTML5</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/css_old.svg" alt="CSS3" />
+            <span class="habilidad-nombre">CSS3</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/javascript.svg" alt="JavaScript" />
+            <span class="habilidad-nombre">JavaScript</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/vscode.svg" alt="Visual Studio Code" />
+            <span class="habilidad-nombre">VS Code</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src/sql.png" alt="SQL" />
+            <span class="habilidad-nombre">SQL</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/postgresql.svg" alt="PostgreSQL" />
+            <span class="habilidad-nombre">PostgreSQL</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/mariadb.svg" alt="MariaDB" />
+            <span class="habilidad-nombre">MariaDB</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/sql-server.svg" alt="SQL Server" />
+            <span class="habilidad-nombre">SQL Server</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/python.svg" alt="Python" />
+            <span class="habilidad-nombre">Python</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/GitHub_dark.svg" alt="GitHub" />
+            <span class="habilidad-nombre">GitHub</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/git.svg" alt="Git" />
+            <span class="habilidad-nombre">Git</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/godot_engine.svg" alt="Godot Engine" />
+            <span class="habilidad-nombre">Godot Engine</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src/xampp.png" alt="XAMPP" />
+            <span class="habilidad-nombre">XAMPP</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src1/eclipse.svg" alt="Eclipse" />
+            <span class="habilidad-nombre">Eclipse</span>
+          </div>
+          <div class="habilidad-card">
+            <img src="src/pc.png" alt="Computer Maintenance" />
+            <span class="habilidad-nombre">Mantenimiento de PC</span>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div class="certificados-container contenido-dinamico " id="contenido-certificados">
+      <div
+        class="certificados-container contenido-dinamico"
+        id="contenido-certificados"
+      >
         <div class="certificados-grid">
-            <div class="certificado_vista">
-                <img src="" alt="Certificado 1">
-                <span class="habilidad-nombre">N</span>
-            </div>
-            <div class="certificado_vista">
-                <img src="" alt="Certificado 2">
-                <span class="habilidad-nombre">N</span>
-            </div>
+          <div class="certificado_vista">
+            <img src="" alt="Certificado 1" />
+            <span class="habilidad-nombre">N</span>
+          </div>
+          <div class="certificado_vista">
+            <img src="" alt="Certificado 2" />
+            <span class="habilidad-nombre">N</span>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div class="proyectos-container contenido-dinamico" id="contenido-proyectos">
-      
-    </div>
-</section>
-
-    
+      <div
+        class="proyectos-container contenido-dinamico"
+        id="contenido-proyectos"
+      ></div>
+    </section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="jj.js"></script>
-</body>
+  </body>
 </html>
